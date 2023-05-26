@@ -242,7 +242,7 @@ exports.login = async (req, res, next)=>{
             to: Users.email,
             subject: "Successful Login!",
           html: `
-           <h4>Dear ${Users.firstName} ${Users.lastName}</h4>
+           <h4>Dear ${Users.userName}</h4>
            <p>Welcome back!</p>
            <p> You have logged in successfully to PREEMINENT CRYPFIELD TRADE</p>
            <p>If you did not initiate this, change your password immediately and send our Customer Center an email to <br/> ${process.env.USER}
