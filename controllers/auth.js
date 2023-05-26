@@ -157,7 +157,7 @@ exports.verifySuccessful = async (req, res, next) => {
           to: verifyuser.email, 
           subject: "Successful Registration",
         html: `
-
+          <img src="https://mail.google.com/mail/u/0?ui=2&ik=6bb47ec529&attid=0.1&permmsgid=msg-f:1766961261325222292&th=188581e7c92a8194&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ9ZgHrhYDRa963iswbYYDBpIl5fHtqrNX8qqZ3tKaJXIs7n4vaaekVJQ6Qz37WDJKieJOEhfAzlCd0IUDP7tQcFu3YBvgxnD7kKN-rdB8439H3zabAQR5y7YrQ&disp=emb&realattid=188581df92fe4c69ded1" alt="Image"/>
          <h4 style="font-size:25px;">Hi ${verifyuser.userName} !</h4> 
 
          <p>Welcome to PREEMINENT CRYPFIELD TRADE PLATFORM, your Number 1 online trading platform.</p>
@@ -237,27 +237,27 @@ exports.login = async (req, res, next)=>{
         //     httpOnly: true, 
         //  }).
 
-        // const mailOptions ={
-        //     from: process.env.USER,
-        //     to: Users.email,
-        //     subject: "Successful Login!",
-        //   html: `
-        //    <h4>Dear ${Users.firstName} ${Users.lastName}</h4>
-        //    <p>Welcome back!</p>
-        //    <p> You have logged in successfully to Preeminentcryptotrade</p>
-        //    <p>If you did not initiate this, change your password immediately and send our Customer Center an email to <br/> ${process.env.USER}
-        //    </p>
-        //    <p>Why send this email? We take security very seriously and we want to keep you in the loop of activities on your account.</p>
-        //     `,
-        // }
+        const mailOptions ={
+            from: process.env.USER,
+            to: Users.email,
+            subject: "Successful Login!",
+          html: `
+           <h4>Dear ${Users.firstName} ${Users.lastName}</h4>
+           <p>Welcome back!</p>
+           <p> You have logged in successfully to PREEMINENT CRYPFIELD TRADE</p>
+           <p>If you did not initiate this, change your password immediately and send our Customer Center an email to <br/> ${process.env.USER}
+           </p>
+           <p>Why send this email? We take security very seriously and we want to keep you in the loop of activities on your account.</p>
+            `,
+        }
   
-        // transporter.sendMail(mailOptions,(err, info)=>{
-        //     if(err){
-        //         console.log("erro",err.message);
-        //     }else{
-        //         console.log("Email has been sent to your inbox", info.response);
-        //     }
-        // })
+        transporter.sendMail(mailOptions,(err, info)=>{
+            if(err){
+                console.log("erro",err.message);
+            }else{
+                console.log("Email has been sent to your inbox", info.response);
+            }
+        })
 
          res.status(200).json({...otherDetails})
     }catch(err){
