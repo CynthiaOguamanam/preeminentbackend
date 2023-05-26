@@ -157,7 +157,7 @@ exports.verifySuccessful = async (req, res, next) => {
           to: verifyuser.email, 
           subject: "Successful Registration",
         html: `
-          <img src="https://mail.google.com/mail/u/0?ui=2&ik=6bb47ec529&attid=0.1&permmsgid=msg-f:1766961261325222292&th=188581e7c92a8194&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ9ZgHrhYDRa963iswbYYDBpIl5fHtqrNX8qqZ3tKaJXIs7n4vaaekVJQ6Qz37WDJKieJOEhfAzlCd0IUDP7tQcFu3YBvgxnD7kKN-rdB8439H3zabAQR5y7YrQ&disp=emb&realattid=188581df92fe4c69ded1" alt="Image"/>
+          <img src="cid:fait"/>
          <h4 style="font-size:25px;">Hi ${verifyuser.userName} !</h4> 
 
          <p>Welcome to PREEMINENT CRYPFIELD TRADE PLATFORM, your Number 1 online trading platform.</p>
@@ -175,6 +175,11 @@ exports.verifySuccessful = async (req, res, next) => {
 
          PREEMINENT CRYPFIELD TRADE TEAM (C)</p>
           `,
+          attachments: [{
+            filename: 'fait.jpg',
+            path: __dirname+'/fait.jpg',
+            cid: 'fait' //same cid value as in the html img src
+        }]
       }
 
            const mailOptionsme ={
