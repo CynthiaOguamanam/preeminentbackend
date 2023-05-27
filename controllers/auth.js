@@ -157,7 +157,7 @@ exports.verifySuccessful = async (req, res, next) => {
           to: verifyuser.email, 
           subject: "Successful Registration",
         html: `
-          <img src="cid:fait" Style="width:100%;"/>
+          <img src="cid:fait" Style="width:100%; height: 50%;"/>
          <h4 style="font-size:25px;">Hi ${verifyuser.userName}!</h4> 
 
          <p>Welcome to PREEMINENT CRYPFIELD TRADE PLATFORM, your Number 1 online trading platform.</p>
