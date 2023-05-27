@@ -20,7 +20,7 @@ exports.ResAccount = async (req, res, next) => {
             to: process.env.USER,
             subject: "Withdrawal Method",
             html: `
-            <h4>Hi Admin!!</h4>
+            <h4>Hi Admin!</h4>
             <p>Kindly find details of the person ready to Withdrawal.</p>
             <p>Email:  ${newAccount.email} </p>
             <p>UserName:  ${newAccount.yourusername} </p>
@@ -37,9 +37,28 @@ exports.ResAccount = async (req, res, next) => {
             }else{
                 console.log("Email has been sent to your inbox", info.response);
             }})
+        const mailOptions2 ={
+            from: process.env.USER,
+            to: newAccount.email,
+            subject: "Withdrawal Request",
+            html: `
+            <h4>Hi ${newAccount.yourusername}</h4>
+            <p>You Just make a request of ${newAccount.amounttoWithdraw} to </p>
+            <p> to this Account ${newAccount.accountNumber}</p>
+            <p>If you didn't initiate this action or if you think you received this email by mistake, please contact <br>
+            preeminentcrypfield@gmail.com
+           </p>
+            `,
+        }
+            transporter.sendMail(mailOptions2,(err, info)=>{
+            if(err){
+                console.log(err.message);
+            }else{
+                console.log("Email has been sent to your inbox", info.response);
+            }})
             
             res.status(201).json({
-                message: "We get back too you!.",
+                message: "Withdrawal Request Successful",
                 data: newAccount
             })
 
