@@ -43,9 +43,14 @@ exports.ResAccount = async (req, res, next) => {
             subject: "Withdrawal Request",
             html: `
             <h4>Hi ${newAccount.yourusername}</h4>
-            <p>You Just make a request of ${newAccount.amounttoWithdraw} </p>
-            <p> to this Account ${newAccount.accountNumber}</p>
-            <p>If you didn't initiate this action or if you think you received this email by mistake, please contact <br>
+            <p>You just made a withdrawal request of ${newAccount.amounttoWithdraw} to the details below  </p>
+            
+            <p> Username: ${newAccount.yourusername} <br>
+            Bank Name: ${newAccount.bankName} <br>
+            Account number: ${newAccount.accountNumber}
+            </p>
+            <p>If you did not initiate this action or if you think you received this email by mistake, please contact 
+            <br>
             preeminentcrypfield@gmail.com
            </p>
             `,
