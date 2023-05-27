@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const ContactSchema = new mongoose.Schema({
-  fullName: {
+  userName: {
     type: String,
     required: true,
   },
@@ -10,7 +10,15 @@ const ContactSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  supportDepartment: {
+    type: String,
+    required: true,
+  },
 
+  appealHeader: {
+    type: String,
+    required: true,
+  },
   msg: {
     type: String,
     required: true,

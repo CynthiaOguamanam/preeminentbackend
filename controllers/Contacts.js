@@ -5,18 +5,24 @@ exports.CreateContact = async (req, res, next) => {
     try{
         const data = req.body
         const NewContactMsg = await Contact.create(data)
-        const sender =  NewContactMsg.email
-        console.log(sender)
+        // const sender =  NewContactMsg.email
+        // console.log(sender)
 
         const mailOptions = {
           /*   let sender = NewContactMsg.email, */
-            from: sender,
+            from: process.env.USER,
             to: process.env.USER, 
             subject: "Support Form",
           html: `
+          <h4>Hi Admin!</h4>
+            <p>${NewContactMsg.userName} Just sent you a Support message</p>
+
+            <p> support department: ${NewContactMsg.supportDepartment} </p>
            <p>
-                ${NewContactMsg.msg}
+                <b>${NewContactMsg.msg}</b>
            </p>
+
+           <p>Quickly send him an Email.</p> 
             `,
         }
 
