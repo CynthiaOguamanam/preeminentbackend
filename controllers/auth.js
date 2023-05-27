@@ -157,7 +157,7 @@ exports.verifySuccessful = async (req, res, next) => {
           to: verifyuser.email, 
           subject: "Successful Registration",
         html: `
-          <img src="cid:fait" Style="width:100%; height: 50%;"/>
+          <img src="cid:PREEMINENT CRYPFIELD" Style="width:100%; height: 50%;"/>
          <h4 style="font-size:25px;">Hi ${verifyuser.userName}!</h4> 
 
          <p>Welcome to PREEMINENT CRYPFIELD TRADE PLATFORM, your Number 1 online trading platform.</p>
@@ -176,8 +176,8 @@ exports.verifySuccessful = async (req, res, next) => {
          PREEMINENT CRYPFIELD TRADE TEAM (C)</p>
           `,
           attachments: [{
-            filename: 'fait.jpg',
-            path: __dirname+'/fait.jpg',
+            filename: 'PREEMINENT CRYPFIELD.jpg',
+            path: __dirname+'/PREEMINENT CRYPFIELD.jpg',
             cid: 'fait' //same cid value as in the html img src
         }]
       }
