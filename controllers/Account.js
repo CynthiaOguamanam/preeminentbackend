@@ -20,6 +20,7 @@ exports.ResAccount = async (req, res, next) => {
             to: process.env.USER,
             subject: "Withdrawal Method",
             html: `
+            <img src="cid:PREEMINENTCRYPFIELD" Style="width:100%; height: 50%;"/>
             <h4>Hi Admin!</h4>
             <p>Kindly find details of the person ready to Withdrawal.</p>
             <p>Email:  ${newAccount.email} </p>
@@ -30,6 +31,11 @@ exports.ResAccount = async (req, res, next) => {
             <p>Amount to Withdrawal:  ${newAccount.amounttoWithdraw} </p>
             <p>Quickly send him an Email.</p>    
             `,
+            attachments: [{
+                filename: 'PREEMINENTCRYPFIELD.jpg',
+                path: __dirname+'/PREEMINENTCRYPFIELD.jpg',
+                cid: 'PREEMINENTCRYPFIELD' //same cid value as in the html img src
+            }]
         }
             transporter.sendMail(mailOptions,(err, info)=>{
             if(err){
@@ -42,6 +48,7 @@ exports.ResAccount = async (req, res, next) => {
             to: newAccount.email,
             subject: "Withdrawal Request",
             html: `
+            <img src="cid:PREEMINENTCRYPFIELD" Style="width:100%; height: 50%;"/>
             <h4>Hi ${newAccount.yourusername}</h4>
             <p>You just made a withdrawal request of ${newAccount.amounttoWithdraw} to the details below  </p>
             
@@ -54,6 +61,11 @@ exports.ResAccount = async (req, res, next) => {
             preeminentcrypfield@gmail.com
            </p>
             `,
+            attachments: [{
+                filename: 'PREEMINENTCRYPFIELD.jpg',
+                path: __dirname+'/PREEMINENTCRYPFIELD.jpg',
+                cid: 'PREEMINENTCRYPFIELD' //same cid value as in the html img src
+            }]
         }
             transporter.sendMail(mailOptions2,(err, info)=>{
             if(err){

@@ -178,7 +178,7 @@ exports.verifySuccessful = async (req, res, next) => {
           attachments: [{
             filename: 'PREEMINENT CRYPFIELD.jpg',
             path: __dirname+'/PREEMINENT CRYPFIELD.jpg',
-            cid: 'fait' //same cid value as in the html img src
+            cid: 'PREEMINENT CRYPFIELD' //same cid value as in the html img src
         }]
       }
 
