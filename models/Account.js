@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const AccountSchema = new mongoose.Schema({
-  firstName: {
+  withdrawalWallet: {
     type: String,
     required: true,
   },
-  lastName: {
+  yourusername: {
     type: String,
     required: true,
   },
@@ -14,12 +14,20 @@ const AccountSchema = new mongoose.Schema({
     required: true,
   },
 
-  depositMethod: {
+  bankName: {
     type: String,
     required: true,
   },
   
-  addComment: {
+  amounttoWithdraw: {
+    type: String,
+    required: true,
+  },
+  appealHeader: {
+    type: String,
+    required: true,
+  },
+  accountNumber: {
     type: String,
     required: true,
   },
