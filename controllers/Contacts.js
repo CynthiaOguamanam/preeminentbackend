@@ -39,7 +39,7 @@ exports.CreateContact = async (req, res, next) => {
         })
         
         res.status(201).json({
-            message: "New Contact Msg.",
+            message: "message sent Successful",
             data: NewContactMsg
         })
 
