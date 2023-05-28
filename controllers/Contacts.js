@@ -5,6 +5,10 @@ exports.CreateContact = async (req, res, next) => {
     try{
         const data = req.body
         const NewContactMsg = await Contact.create(data)
+
+        if(!req.body){
+            return next(createError(400, "Fill all information!"))
+        }
         // const sender =  NewContactMsg.email
         // console.log(sender)
 
