@@ -93,7 +93,7 @@ exports.updateRef = async (req,res, next) => {
             message: "wrong input"
         })
       }else{
-        const refs = await User.findByIdAndUpdate(id,{lastDeposit:ref},{
+        const refs = await User.findByIdAndUpdate(id,{ref:ref},{
             new: true
         })
         res.status(201).json({

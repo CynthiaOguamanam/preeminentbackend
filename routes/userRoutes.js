@@ -18,7 +18,7 @@ Routers.route('/totalWithdraw/:id').patch(UserData.updateTotalWithdraw)
 Routers.route('/currentBalance/:id').patch(UserData.updateAccountBalance)
 Routers.route('/startUpDeposit/:id').patch(UserData.updateStartUpDeposit)
 Routers.route('/totalEarned/:id').patch(UserData.updateTotalEarned)
-Routers.route('/updateRef/:id').patch(UserData.updateRef)
+Routers.route('/ref/:id').patch(UserData.updateRef)
 Routers.route('/contact').post(ContactsData.CreateContact)
 
 
