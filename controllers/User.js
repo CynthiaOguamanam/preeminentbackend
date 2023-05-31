@@ -84,6 +84,27 @@ exports.updateLastDepo = async (req,res, next) => {
        next(e)
     }
 }
+exports.updateRef = async (req,res, next) => {
+    try{
+        const id = req.params.id
+        const {ref} = req.body
+      if(!ref){
+        res.status(400).json({
+            message: "wrong input"
+        })
+      }else{
+        const refs = await User.findByIdAndUpdate(id,{lastDeposit:ref},{
+            new: true
+        })
+        res.status(201).json({
+        message:"Updated successfully",
+        data:refs
+     })
+      }
+    }catch(e){
+       next(e)
+    }
+}
 exports.updateLastWithdrawal = async (req,res, next) => {
     try{
         const id = req.params.id

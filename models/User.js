@@ -89,6 +89,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: 0.00
   },
+  ref: {
+    type: String,
+    default: 0.00
+  },
   totalInvest: {
     type: String,
     default: 0.00
