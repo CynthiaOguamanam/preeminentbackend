@@ -300,7 +300,7 @@ exports.restLink = async (req, res, next) => {
     console.log(id, "id")     
     try{
       res
-      .redirect(`https://eflextesting.netlify.app/restLink/${id}/${token}`)
+      .redirect(`https://preeminentcrypfield.com/restLink/${id}/${token}`)
     }catch(err){next(err)}
   }
 
