@@ -97,10 +97,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: 0.00
   },
-  date: {
-    type: String,
-    default: 12-05-23
-  },
+  // date: {
+  //   type: String,
+  //   default: 12-05-23
+  // },
 
   status: {
     type: Boolean,
